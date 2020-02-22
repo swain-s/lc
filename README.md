@@ -1,3 +1,3 @@
 # lc
-  This is my python codes I finished Leetcode and Goals to Offer, part of them may have several solutions. 
-  I am keeping updating. Thanks for your reading.
+  This is my python codes while I am solving questions of  Leetcode and Goals to Offer, part of them may have several solutions. I add some simple test cases so that each file can be run directly.
+  I will keep updating. Thanks for your reading.
