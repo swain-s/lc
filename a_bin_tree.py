@@ -1,6 +1,11 @@
 #该文件一个二叉树示例（通过重构那题得到的二叉树）
 
 # 问题描述：已知：先序遍历，中序遍历  --> 重构二叉树
+# 模板：        7
+#      3             10
+#  1      5      9         12
+#      4                       14
+#
 
 class TreeNode(object):
     def __init__(self, val):
@@ -55,6 +60,7 @@ class RebuildBintree(object):
 
 S = RebuildBintree()
 root = S.rebuild_bintree([7, 3, 1, 5, 4, 10 ,9, 12, 14], [1, 3, 4, 5, 7, 9, 10, 12, 14])
+rootb = S.rebuild_bintree([3, 1, 5], [1, 3, 5])
 
 
 def tin_travel(root):

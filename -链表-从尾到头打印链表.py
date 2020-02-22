@@ -8,15 +8,26 @@ class ListNode(object):
 
 class ListFromTail(object):
     def __init__(self):
-        pass
+        self.output = []
 
     #方法一：递归
     def list_from_tail(self, list_head):
+        if list_head == None:
+            return None
+
         if list_head.next == None:
             print(list_head.val)
             return
         self.list_from_tail(list_head.next)
         print(list_head.val)
+
+    #方法二：递归（输出到数组）
+    def list_from_tail_(self, list_head):
+        if not list_head:
+            return
+        self.list_from_tail_(list_head.next)
+        self.output.append(list_head.val)
+        return self.output
 
     #方法二：反转链表
 
@@ -33,4 +44,6 @@ if __name__ == "__main__":
     node2.next = node3
     node3.next = node4
 
-    L.list_from_tail(head)
+    #L.list_from_tail(head)
+    r = L.list_from_tail_(head)
+    print(r)
