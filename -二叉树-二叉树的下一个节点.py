@@ -24,23 +24,35 @@ class NextOfInOrder(object):
         if node == None:
             return None
 
+        #有右子树，返回右子树的中序遍历的第一个节点
+        if node.right:
+            stack = []
+            cur = node.right
+            while cur or len(stack) > 0:
+                if cur:
+                    stack.append(cur)
+                    cur = cur.left
+                else:
+                    tar_ndoe = stack.pop()
+                    return tar_ndoe
 
-        stack = []
-        cur = node
-        while cur or len(stack)>0:
-            if cur:
-                stack.append(cur)
-                cur = cur.left
-            else:
-                cur = cur.pop()
-                if cur == node:
 
-                cur = cur.right
-        cur
-
+        #无右子树，无双亲节点：返回None
+        #无右子树，自己是双亲的左节点：返回双亲节点
+        #无右子树, 自己是双亲的右节点，找到第一个祖先节点其双亲节点的左节点，返回该祖先的双亲（在自己右边的节点）
+        if node.right == None:
+            if node.next == None:
+                return None
+            elif node.next and node.next.left == node:
+                return node.next
+            elif node.next and node.next.right == node:
+                cur = node.next
+                while cur:
+                    if cur.next and cur.next.left == cur:
+                        return cur.next
+                    cur = cur.next
+                return None
 
 if __name__ == "__main__":
-    S = Solution()
-
-if __name__ == "__main__":
-    S = Solution()
+    S = NextOfInOrder()
+    print(S.next_of_in_order(root).val)

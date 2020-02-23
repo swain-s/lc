@@ -60,7 +60,7 @@ class RebuildBintree(object):
 
 S = RebuildBintree()
 root = S.rebuild_bintree([7, 3, 1, 5, 4, 10 ,9, 12, 14], [1, 3, 4, 5, 7, 9, 10, 12, 14])
-rootb = S.rebuild_bintree([3, 1, 5], [1, 3, 5])
+rootb = S.rebuild_bintree([3, 1, 1], [1, 3, 1])
 
 
 def tin_travel(root):
