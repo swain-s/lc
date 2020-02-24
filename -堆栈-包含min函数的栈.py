@@ -32,6 +32,9 @@ class MyStack(object):
             return True
         return False
 
+    def top(self):
+        return self.stack[-1]
+
     #方法一：维护一个最小数，插入和删除时进行判断
     #特点：适用于pop()时不容易命中最小数
     def min(self):

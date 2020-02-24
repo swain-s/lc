@@ -41,15 +41,23 @@ class ListKFromTail(object):
 
     # 方法二：先指针和后指针
     def list_k_from_tail_(self, head, k):
+        if head == None:
+            return None
+        if head == 0:
+            return None
+
+        #计算机的坐标
+        k = k -1
         fir = head
         sec = head
         for i in range(k):
             if fir.next == None:
                 return None
             fir = fir.next
+
         while sec:
             if fir.next == None:
-                return sec.val
+                return sec
             sec = sec.next
             fir = fir.next
 
@@ -67,6 +75,6 @@ if __name__ == "__main__":
     node2.next = node3
     node3.next = node4
 
-    L.list_k_from_tail(head, 2)
+    #L.list_k_from_tail(head, 2)
 
-    print(L.list_k_from_tail_(head, 0))
+    print(L.list_k_from_tail_(head, 3).val)

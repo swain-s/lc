@@ -13,7 +13,11 @@ class ReverseList(object):
 
     # 方法一：递归
     def reverse_list(self, head):
-        if head.next.next == None:
+        if head == None:
+            return None
+        elif head.next == None:
+            return head
+        elif head.next.next == None:
             head.next.next = head
             head.next = None
             return head.next

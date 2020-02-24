@@ -13,30 +13,35 @@ class Merger(object):
 
     # 
     def merger(self, head1, head2):
-        small_head = head2
-        big_head = head1
-        if head1.val <= head2.val:
-            small_head = head1
-            big_head = head2
+        if head1 == None and head2 == None:
+            return None
+        elif head1 == None:
+            return head2
+        elif head2 == None:
+            return head1
+
+        (small_head, big_head) = (head1, head2) if head1.val <= head2.val else (head2, head1)
 
         new_head = ListNode(0)
         pcur = new_head
         while small_head and big_head and small_head.val <= big_head.val:
-            print("1 < 2", small_head.val, big_head.val)
+            #print("1 < 2", small_head.val, big_head.val)
             pcur.next = small_head
             pcur = pcur.next
             small_head = small_head.next
             while small_head and big_head and small_head.val > big_head.val:
-                print("1 >> 2", small_head.val, big_head.val)
+                #print("1 >> 2", small_head.val, big_head.val)
                 pcur.next = big_head
                 pcur = pcur.next
                 big_head = big_head.next
 
         while small_head:
             pcur.next = small_head
+            pcur = pcur.next
             small_head = small_head.next
         while big_head:
             pcur.next = big_head
+            pcur = pcur.next
             big_head = big_head.next
 
         return new_head.next
