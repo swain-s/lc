@@ -11,6 +11,7 @@ class FirstCommonNode(object):
     def __init__(self):
         pass
 
+    #方法二：hash表
     #方法一：求出长度差值
     def first_common_node(self, head1, head2):
         if head1 == None or head2 == None:
