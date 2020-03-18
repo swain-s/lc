@@ -22,7 +22,7 @@ class SeqOfSumS(object):
                 return []
 
         re_arr = []
-        for i in range(s):
+        for i in range(1, s):
             re = seq_of_sum_s(i, s, s)
             if len(re) > 0:
                 re_arr.append(re)
@@ -31,4 +31,4 @@ class SeqOfSumS(object):
 
 if __name__ == "__main__":
     S = SeqOfSumS()
-    print(S.seq_of_sum_s(1))
+    print(S.seq_of_sum_s(7))

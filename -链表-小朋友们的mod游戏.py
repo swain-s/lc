@@ -43,6 +43,8 @@ class ModGame(object):
         return vals
 
     def mod_game(self, n, m):
+        if n <= 0:
+            return -1
         #构造环形链表
         head = ListNode(-1)
         cur = head
